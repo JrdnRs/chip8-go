@@ -63,7 +63,7 @@ func (b *Beeper) generateSample() []byte {
 	bytes := make([]byte, n*2)
 
 	for i := 0; i < n; i++ {
-		s := int16(b.amplitude * curvyTraingle(b.time))
+		s := int16(b.amplitude * curvyTriangle(b.time))
 
 		bytes[2*i] = byte(s)
 		bytes[2*i+1] = byte(s >> 8)
@@ -80,7 +80,7 @@ func triangle(t float64) float64 {
 	return (math.Abs(math.Mod(t, 2)-1) - 0.5) * 2
 }
 
-func curvyTraingle(t float64) float64 {
+func curvyTriangle(t float64) float64 {
 	return math.Pow(math.Abs(math.Mod(t, 2)-1), 3)
 }
 

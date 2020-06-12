@@ -137,7 +137,7 @@ func (emu *Emulator) Process() {
 	}
 }
 
-// EmulateCycle fetches, decodes, executes next opcode and updates timers.
+// EmulateCycle fetches, decodes, executes next opcode.
 func (emu *Emulator) EmulateCycle() {
 
 	// Opcodes are two bytes long and stored big-endian.
